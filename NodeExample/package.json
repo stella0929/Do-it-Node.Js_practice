@@ -1,0 +1,23 @@
+{
+  "name": "nodeexample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "calc.js",
+  "dependencies": {
+    "nconf": "^0.10.0"
+  }, //npm install 하면 됨
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stella0929/DoitNodeJs_practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stella0929/DoitNodeJs_practice/issues"
+  },
+  "homepage": "https://github.com/stella0929/DoitNodeJs_practice#readme"
+}
