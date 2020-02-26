@@ -7,7 +7,7 @@ var http = require('http');
 
 var app = express();
 
-app.set('post',process.env.PORT||3000);
+app.set('port',process.env.PORT||3000);
 
 app.use(function(req, res, next){
 	console.log('첫번째 미들웨어 호출됨. ');

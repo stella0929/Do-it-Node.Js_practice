@@ -14,7 +14,7 @@ app.use(function(req , res , next){
 	res.writeHead('200',{"Content-Type":
 "text/html;charset=utf8"});
 	res.end('<h1>서버에서 응답한 결과입니다.</h1>');//전송
-}); //미들웨어(함수) 등록. 
+}); //미들웨어(함수) 등록. 클라이언트 요청이 들어오면 받아서 처리.
  
 
 var server =  http.createServer(app).listen(app.get('port'),function(){
