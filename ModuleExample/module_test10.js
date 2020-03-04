@@ -2,6 +2,8 @@
 /* eslint-disable no-console */
 /*eslint no-undef: "error"*/
 /*eslint-env node*/ 
-var printUser = require('./user7').printUser;
+var User = require('./user10');
 
-printUser();
+var user = new User('test01', '소녀시대');
+
+user.printUser();
