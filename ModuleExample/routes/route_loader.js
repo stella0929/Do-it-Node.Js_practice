@@ -20,9 +20,9 @@ function initRoutes(app, router){
 		
 		var curModule = require(curItem.file);
 		if(curItem.type=='get'){
-			router.route(curItem.path).get(curModule.curItem.method);
+			router.route(curItem.path).get(curModule[curItem.method]);
 		}else if(curItem.type =='post'){
-			router.route(curItem.path).get(curModule.curItem.method);
+			router.route(curItem.path).post(curModule[curItem.method]);
 		}else{
 			console.error('라우팅 함수의 타입을 알 수 없습니다. :'+curItem.type);
 		}
