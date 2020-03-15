@@ -21,13 +21,26 @@ var login = function(req,res){
 			}
 			if (docs){
 				console.dir(docs);
-					    res.writeHead(200,{"Content-Type":"text/html;charset=utf8"});
-				res.write('<h1>사용자 로그인 성공</h1>');
-				res.write('<div><p>사용자: '+docs[0].name+'</p></div>');
-				res.write('<br><br><a href="/public/login.html>다시 로그인하기</a>');
 				
-				res.end();
-			
+				res.writeHead(200,{"Content-type":"text/html;charset=utf8"});
+				
+				var context = {
+					userid:paramId,
+					username:docs[0].name
+				};
+				req.app.render('login_sucess',context,function(err,html){
+					if(err){
+						console.error('뷰 렌더링 중 에러발생:'+err.stack);
+							console.log('에러 발생');
+						res.writeHead(200,{"Content-Type":"text/html;charset=utf8"});
+						res.write('<h1>뷰 렌더링 중 에러발생</h1>');
+						res.write('<br><p>'+err.stack+'</p>');
+						res.end();
+		
+					}
+					res.end(html);
+				});
+				
 			}
 			else{
 				console.log('에러 발생');
@@ -100,17 +113,25 @@ var listuser = function(req,res){
 		}
 			if(results){
 				console.dir(results);
+						
 				
-			res.writeHead(200,{"Content-Type":"text/html;charset=utf8"});
-				res.write("<h2>사용자 리스트</h2>");
-				res.write("<div><ul>");
-				for(var i =0; i<results.length;i++){
-					var curId = results[i]._doc.id;
-					var curName = results[i]._doc.name;
-					res.write("     <li>#"+i+"->"+curId+","+curName+"</li>");
-			}
-				res.write("</ul></div>");
-				res.end();
+				var context = {
+				results : results
+				};
+				req.app.render('listuser',context,function(err,html){
+					if(err){
+						console.error('뷰 렌더링 중 에러발생:'+err.stack);
+							console.log('에러 발생');
+						res.writeHead(200,{"Content-Type":"text/html;charset=utf8"});
+						res.write('<h1>뷰 렌더링 중 에러발생</h1>');
+						res.write('<br><p>'+err.stack+'</p>');
+						res.end();
+		
+					}
+					res.writeHead(200,{"Content-type":"text/html;charset=utf8"});
+					res.end(html);
+				});
+		
 		}
 			else{console.log('에러 발생');
 		res.writeHead(200,{"Content-Type":"text/html;charset=utf8"});
