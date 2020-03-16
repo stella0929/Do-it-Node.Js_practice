@@ -28,7 +28,7 @@ var login = function(req,res){
 					userid:paramId,
 					username:docs[0].name
 				};
-				req.app.render('login_sucess',context,function(err,html){
+				req.app.render('login_success',context,function(err,html){
 					if(err){
 						console.error('뷰 렌더링 중 에러발생:'+err.stack);
 							console.log('에러 발생');

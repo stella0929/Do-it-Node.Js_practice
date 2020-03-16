@@ -24,7 +24,8 @@ var route_loader = require('./routes/route_loader')
 var app = express();
 
 app.set('views',__dirname+'/views');
-app.set('view engine','ejs');
+//app.set('view engine','ejs');
+app.set('view engine', 'pug');
 
 console.log('config.server_port ->'+config.server_port);
 app.set('port', config.server_port || 3000);
