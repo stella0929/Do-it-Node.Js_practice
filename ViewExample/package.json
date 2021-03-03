@@ -23,7 +23,7 @@
     "mongodb": "^3.5.4",
     "mongoose": "^5.9.2",
     "path": "^0.12.7",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "semantic-ui": "^2.4.2"
   },
   "devDependencies": {
